@@ -1,9 +1,7 @@
 var namespace = "arthur-corenzan-v1";
 
 self.addEventListener("install", function(event) {
-  self.addEventListener("install", function(event) {
-    event.waitUntil(caches.open(namespace));
-  });
+  event.waitUntil(caches.open(namespace));
 });
 
 self.addEventListener("fetch", function(event) {
@@ -12,6 +10,7 @@ self.addEventListener("fetch", function(event) {
       if (response) {
         return response;
       }
+
       return fetch(event.request).then(function(response) {
         if (!response || response.status !== 200 || response.type !== "basic") {
           return response;
