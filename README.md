@@ -1,1 +1,1 @@
-> https://arthur.corenzan.com
+> https://corenzan.com/arthur/
