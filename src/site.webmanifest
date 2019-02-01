@@ -16,6 +16,5 @@
   "orientation": "portrait",
   "display": "standalone",
   "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "start_url": "https://arthur.corenzan.com"
+  "background_color": "#ffffff"
 }
