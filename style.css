@@ -1,0 +1,82 @@
+html {
+  font-size: 22px;
+}
+
+body {
+  font-family: "Old Standard TT", serif;
+  color: #333;
+}
+
+main {
+  margin: 0 10%;
+  max-width: 60%;
+}
+
+section {
+  margin: 3rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bolder;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.125;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1.25;
+}
+
+h3 {
+  margin-top: 1.5rem;
+}
+
+h3 small {
+  white-space: nowrap;
+}
+
+p,
+h1,
+h2,
+ul {
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: #55c;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: mediumblue;
+}
+
+ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+ul ul {
+  list-style: circle;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+
+  main {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  section {
+    margin: 1.5rem;
+  }
+}
