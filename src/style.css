@@ -1,7 +1,7 @@
 @import "resetize";
 
 html {
-  font-size: 22px;
+  font-size: 24px;
 }
 
 body {
@@ -75,6 +75,11 @@ ul ul {
 
   main {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 472px) {
+  main {
     margin: 0;
   }
 
