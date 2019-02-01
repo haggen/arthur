@@ -1,15 +1,17 @@
 {
+  "name": "arthur",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "repository": "https://github.com/haggen/arthur.git",
   "author": "Arthur <arthur@corenzan.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/*.html",
-    "build": "parcel build src/*.html"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "dependencies": {
     "parcel-bundler": "^1.11.0",
+    "parcel-plugin-sw-precache": "^1.0.3",
     "resetize": "^24.5.0"
   }
 }

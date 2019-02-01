@@ -42,27 +42,10 @@
       gtag("js", new Date());
       gtag("config", "UA-25158047-1");
     </script>
-    <script type="text/javascript">
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function() {
-          navigator.serviceWorker.register("/service-worker.js").then(
-            function(registration) {
-              console.log(
-                "ServiceWorker registration successful with scope: ",
-                registration.scope
-              );
-            },
-            function(err) {
-              console.error("ServiceWorker registration failed: ", err);
-            }
-          );
-        });
-      }
-    </script>
   </head>
   <body>
     <main>
-      <nav style="float:right;"><a href="pt.html">Português</a></nav>
+      <nav style="float:right;"><a href="/">Português</a></nav>
       <section>
         <h1>Arthur Corenzan</h1>
 
