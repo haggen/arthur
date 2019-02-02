@@ -1,7 +1,7 @@
 {
   "name": "arthur",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/haggen/arthur.git",
   "author": "Arthur <arthur@corenzan.com>",
   "license": "MIT",
