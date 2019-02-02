@@ -56,7 +56,8 @@ document.addEventListener("DOMContentLoaded", e => {
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
-    navigator.serviceWorker.register("/service-worker.js").then(
+    const serviceWorker = "/service-worker.js";
+    navigator.serviceWorker.register(serviceWorker).then(
       registration => {
         console.log(
           "ServiceWorker registration successful with scope: ",
