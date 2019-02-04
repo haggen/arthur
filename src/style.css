@@ -84,6 +84,18 @@ ul ul {
   list-style: circle;
 }
 
+.checklist {
+  list-style: none;
+  padding-left: 1.75rem;
+}
+
+.checklist li::before {
+  content: "✅";
+  float: left;
+  margin-left: -1.25rem;
+  width: 1.25rem;
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 20px;
