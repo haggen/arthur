@@ -1,5 +1,5 @@
 function getElementLocation(element) {
-  const location = {
+  const loc = {
     element,
     parent: element.parentElement,
     index: -1
@@ -8,10 +8,10 @@ function getElementLocation(element) {
   let sibling = element;
   do {
     sibling = sibling.previousElementSibling;
-    location.index += 1;
+    loc.index += 1;
   } while (sibling);
 
-  return location;
+  return loc;
 }
 
 function reattachElement(loc) {
@@ -20,7 +20,7 @@ function reattachElement(loc) {
       "reattachElement: Parent element is no longer present in the DOM tree"
     );
   }
-  loc.parent.insertBefore(loc.element, loc.parent.children[location.index]);
+  loc.parent.insertBefore(loc.element, loc.parent.children[loc.index]);
 }
 
 function detachElement(element) {
@@ -46,6 +46,7 @@ const detachedElements = [];
 
 function changeLanguage(lang) {
   const selectedLang = resolveLanguage(lang);
+  console.log("Changing language to:", selectedLang);
   while (detachedElements.length > 0) {
     reattachElement(detachedElements.pop());
   }
