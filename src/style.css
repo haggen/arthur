@@ -86,14 +86,12 @@ ul ul {
 
 .checklist {
   list-style: none;
-  padding-left: 1.75rem;
 }
 
 .checklist li::before {
-  content: "✅";
+  content: "✔";
   float: left;
-  margin-left: -1.25rem;
-  width: 1.25rem;
+  margin-left: -1.125rem;
 }
 
 @media (max-width: 768px) {
