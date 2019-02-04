@@ -113,3 +113,14 @@ ul ul {
     margin: 1.5rem;
   }
 }
+
+@media print {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  nav {
+    display: none;
+  }
+}
