@@ -7,6 +7,7 @@ html {
 body {
   font-family: "Old Standard TT", serif;
   color: #444;
+  line-height: 1.375;
 }
 
 main {
@@ -31,7 +32,8 @@ nav a {
   background-color: white;
   border-radius: 3rem;
   display: block;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5em 0.75em;
+  font-size: 0.875em;
 }
 
 h1,
@@ -91,7 +93,7 @@ ul ul {
 .checklist li::before {
   content: "✔";
   float: left;
-  margin-left: -1.125rem;
+  margin-left: -1.25rem;
 }
 
 @media (max-width: 768px) {
