@@ -14,61 +14,85 @@ function getElementLocation(element) {
   return location;
 }
 
-function reattachElement(location) {
-  if (!location.parent.parentElement) {
+function reattachElement(loc) {
+  if (!loc.parent.parentElement) {
     throw Error(
       "reattachElement: Parent element is no longer present in the DOM tree"
     );
   }
-  location.parent.insertBefore(
-    location.element,
-    location.parent.children[location.index]
-  );
+  loc.parent.insertBefore(loc.element, loc.parent.children[location.index]);
 }
 
 function detachElement(element) {
-  const location = getElementLocation(element);
-  location.parent.removeChild(element);
-  return location;
+  const loc = getElementLocation(element);
+  loc.parent.removeChild(element);
+  return loc;
+}
+
+function resolveLanguage(lang) {
+  const docEl = document.documentElement;
+  if (docEl.availableLangs.indexOf(lang) > -1) {
+    return lang;
+  }
+  const prefix = lang.split("-")[0];
+  if (docEl.availableLangs.indexOf(prefix) > -1) {
+    return prefix;
+  }
+  console.log("Unsupported language:", lang);
+  return docEl.defaultLang;
 }
 
 const detachedElements = [];
 
 function changeLanguage(lang) {
+  const selectedLang = resolveLanguage(lang);
   while (detachedElements.length > 0) {
     reattachElement(detachedElements.pop());
   }
-  document.documentElement.setAttribute("lang", lang);
+  document.documentElement.lang = selectedLang;
   const elements = document.querySelectorAll(`[lang]`);
   [].forEach.call(elements, element => {
-    if (element.getAttribute("lang") != lang) {
+    if (element.getAttribute("lang") != selectedLang) {
       detachedElements.push(detachElement(element));
     }
   });
 }
-window.changeLanguage = changeLanguage;
+
+const docEl = document.documentElement;
+docEl.defaultLang = docEl.lang;
+docEl.availableLangs = docEl.getAttribute("available-langs");
+
+// -
+// -
+// -
+
+function handle(path) {
+  if (path === "/") {
+    changeLanguage(document.documentElement.defaultLang);
+  } else {
+    changeLanguage(path.split("/").pop());
+  }
+}
 
 document.addEventListener("DOMContentLoaded", e => {
-  let selectedLang = document.documentElement.lang;
+  handle(location.pathname);
+});
 
-  if (navigator.language) {
-    let sample = document.querySelector(`[lang="${navigator.language}"]`);
-    if (!sample) {
-      const prefix = navigator.language.split("-")[0];
-      sample = document.querySelector(`[lang|="${prefix}"]`);
-    }
-    if (sample) {
-      selectedLang = sample.lang;
-      console.log("Language derived from navigator.language:", sample.lang);
-    }
-  }
+window.addEventListener("popstate", e => {
+  handle(location.pathname);
+});
 
-  if (selectedLang) {
-    changeLanguage(selectedLang);
-  } else {
-    throw Error("Attribute [lang] is missing from the documentElement");
+window.addEventListener("click", e => {
+  if (e.target.matches("a[local")) {
+    e.preventDefault();
+    history.pushState(null, null, e.target.href);
+    handle(location.pathname);
   }
 });
+
+// -
+// -
+// -
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
