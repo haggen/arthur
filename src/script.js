@@ -61,7 +61,13 @@ function changeLanguage(lang) {
 
 const docEl = document.documentElement;
 docEl.defaultLang = docEl.lang;
-docEl.availableLangs = docEl.getAttribute("available-langs");
+
+Object.defineProperty(docEl, "supportedLangs", {
+  get() {
+    const value = this.getAttribute("supported-langs") || "";
+    return value.split(/[,\b]+/).map(lang => lang.trim());
+  }
+});
 
 // -
 // -
