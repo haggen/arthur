@@ -96,8 +96,8 @@ window.addEventListener("popstate", e => {
   handle(location.pathname);
 });
 
-window.addEventListener("click", e => {
-  if (e.target.matches("a[local")) {
+document.addEventListener("click", e => {
+  if (e.target.closest("a[local]")) {
     e.preventDefault();
     history.pushState(null, null, e.target.href);
     handle(location.pathname);
