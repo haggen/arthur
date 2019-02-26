@@ -125,4 +125,12 @@ ul ul {
   nav {
     display: none;
   }
+
+  section {
+    break-inside: avoid;
+  }
+}
+
+@page {
+  margin: 10% 0;
 }
