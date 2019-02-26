@@ -29,17 +29,24 @@ function detachElement(element) {
   return loc;
 }
 
-function resolveLanguage(lang) {
+function resolveLanguage(targetedLang) {
+  if (typeof targetedLang !== "string" || targetedLang.length === 0) {
+    throw Error("Bad argument");
+  }
   const docEl = document.documentElement;
-  if (docEl.availableLangs.indexOf(lang) > -1) {
-    return lang;
+  let selectedLang;
+  for (const lang of docEl.supportedLangs) {
+    if (lang === targetedLang) {
+      return lang;
+    }
+    if (
+      !selectedLang &&
+      targetedLang.substring(0, 2) === lang.substring(0, 2)
+    ) {
+      selectedLang = lang;
+    }
   }
-  const prefix = lang.split("-")[0];
-  if (docEl.availableLangs.indexOf(prefix) > -1) {
-    return prefix;
-  }
-  console.log("Unsupported language:", lang);
-  return docEl.defaultLang;
+  return selectedLang || docEl.defaultLang;
 }
 
 const detachedElements = [];
