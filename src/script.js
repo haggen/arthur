@@ -108,7 +108,12 @@ document.addEventListener("click", e => {
 // -
 // -
 
-if ("serviceWorker" in navigator) {
+const isLocal =
+  /(^|\.)localhost$/.test(location.hostname) ||
+  "127.0.0.1" == location.hostname ||
+  "::1" === location.hostname;
+
+if (!isLocal && "serviceWorker" in navigator) {
   window.addEventListener("load", function() {
     const serviceWorker = "/service-worker.js";
     navigator.serviceWorker.register(serviceWorker).then(
