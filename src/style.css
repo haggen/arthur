@@ -21,7 +21,6 @@ section {
 
 .language-selection {
   float: right;
-  padding: 0.75rem;
   position: fixed;
   right: 0;
   text-align: right;
@@ -31,9 +30,9 @@ section {
 .language-selection a {
   background-color: white;
   box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .05);
-  border-radius: 3rem;
+  border-bottom-left-radius: .5rem;
   display: block;
-  padding: 0.5em 1.125em;
+  padding: 0.5em 1em;
   font-size: 0.75em;
 }
 
@@ -99,18 +98,22 @@ a:hover {
 }
 
 .list {
-  padding-left: 2.25rem;
+  padding-left: 2.5rem;
+}
+
+.list .list {
+  padding-left: 0;
 }
 
 .list > li::before {
   float: left;
-  margin-left: -1.25rem;
+  margin-left: -1.5em;
 }
 
 .list.contact > li svg {
   float: left;
-  margin-left: -1.25rem;
-  margin-top: .125rem;
+  margin-left: -1.25em;
+  margin-top: .125em;
 }
 
 .list.expertise > li::before {
@@ -118,7 +121,7 @@ a:hover {
 }
 
 .list.experience > li::before {
-  content: "📍";
+  content: "📌";
 }
 
 .list.work > li::before {
