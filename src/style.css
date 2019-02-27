@@ -21,7 +21,7 @@ section {
 
 .language-selection {
   float: right;
-  padding: 0.375rem;
+  padding: 0.75rem;
   position: fixed;
   right: 0;
   text-align: right;
@@ -30,10 +30,10 @@ section {
 
 .language-selection a {
   background-color: white;
-  box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .125);
+  box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .05);
   border-radius: 3rem;
   display: block;
-  padding: 0.5em 0.75em;
+  padding: 0.5em 1.125em;
   font-size: 0.75em;
 }
 
@@ -76,6 +76,28 @@ a:hover {
   color: mediumblue;
 }
 
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.icon.envelope {
+  fill: transparent;
+}
+
+.icon.github {
+  fill: black;
+}
+
+.icon.twitter {
+  fill: #1da1f2;
+}
+
+.icon.linkedin {
+  fill: #0077b5;
+}
+
 .list {
   padding-left: 2.25rem;
 }
@@ -88,7 +110,7 @@ a:hover {
 .list.contact > li svg {
   float: left;
   margin-left: -1.25rem;
-  margin-top: .25rem;
+  margin-top: .125rem;
 }
 
 .list.expertise > li::before {
