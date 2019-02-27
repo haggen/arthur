@@ -19,7 +19,7 @@ section {
   margin: 3rem;
 }
 
-nav {
+.language-selection {
   float: right;
   padding: 0.375rem;
   position: fixed;
@@ -28,12 +28,13 @@ nav {
   top: 0;
 }
 
-nav a {
+.language-selection a {
   background-color: white;
+  box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .125);
   border-radius: 3rem;
   display: block;
   padding: 0.5em 0.75em;
-  font-size: 0.875em;
+  font-size: 0.75em;
 }
 
 h1,
@@ -53,18 +54,16 @@ h2 {
   line-height: 1.25;
 }
 
-li:nth-child(n + 2) h3 {
-  margin-top: 1.875rem;
-}
-
 h3 small {
   white-space: nowrap;
 }
 
-p,
-h1,
-h2,
-ul {
+* + p,
+* + ul {
+  margin-top: 1.125rem;
+}
+
+li p:last-child {
   margin-bottom: 1.125rem;
 }
 
@@ -77,23 +76,46 @@ a:hover {
   color: mediumblue;
 }
 
-ul {
-  padding-left: 1.5rem;
-  list-style: disc;
+.list {
+  padding-left: 2.25rem;
 }
 
-ul ul {
-  list-style: circle;
-}
-
-.checklist {
-  list-style: none;
-}
-
-.checklist li::before {
-  content: "✔";
+.list > li::before {
   float: left;
   margin-left: -1.25rem;
+}
+
+.list.contact > li svg {
+  float: left;
+  margin-left: -1.25rem;
+  margin-top: .25rem;
+}
+
+.list.expertise > li::before {
+  content: "✔️";
+}
+
+.list.experience > li::before {
+  content: "📍";
+}
+
+.list.work > li::before {
+  content: "📦";
+}
+
+.tech-stack {
+  font-size: 0.75em;
+  margin-top: 0.375rem;
+}
+
+.tech-stack li {
+  display: inline-block;
+}
+
+.tech-stack li + li::before {
+  content: "·";
+  display: inline-block;
+  padding: 0 0.25em 0 0em;
 }
 
 @media (max-width: 768px) {
@@ -126,6 +148,7 @@ ul ul {
     display: none;
   }
 
+  li li,
   section {
     break-inside: avoid;
   }
