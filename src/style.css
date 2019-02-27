@@ -1,18 +1,15 @@
 @import "resetize";
 
 html {
-  font-size: 24px;
-}
-
-body {
-  font-family: "Old Standard TT", serif;
   color: #444;
+  font-family: "Old Standard TT", serif;
+  font-size: 24px;
   line-height: 1.375;
 }
 
 main {
   margin: 10%;
-  max-width: 66%;
+  max-width: 70%;
 }
 
 section {
@@ -29,8 +26,8 @@ section {
 
 .language-selection a {
   background-color: white;
-  box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .05);
-  border-bottom-left-radius: .5rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+  border-bottom-left-radius: 0.5rem;
   display: block;
   padding: 0.5em 1em;
   font-size: 0.75em;
@@ -113,7 +110,7 @@ a:hover {
 .list.contact > li svg {
   float: left;
   margin-left: -1.25em;
-  margin-top: .125em;
+  margin-top: 0.125em;
 }
 
 .list.expertise > li::before {
@@ -143,7 +140,7 @@ a:hover {
   padding: 0 0.25em 0 0em;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   html {
     font-size: 20px;
   }
@@ -153,7 +150,7 @@ a:hover {
   }
 }
 
-@media (max-width: 472px) {
+@media screen and (max-width: 472px) {
   main {
     margin: 0;
   }
@@ -164,6 +161,15 @@ a:hover {
 }
 
 @media print {
+  html {
+    font-size: 18px;
+  }
+
+  main {
+    margin: 0;
+    max-width: 100% !important;
+  }
+
   a {
     text-decoration: none;
     color: inherit;
@@ -177,8 +183,4 @@ a:hover {
   section {
     break-inside: avoid;
   }
-}
-
-@page {
-  margin: 10% 0;
 }
