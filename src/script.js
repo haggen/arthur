@@ -1,6 +1,6 @@
 import ga from "ga-lite";
 
-ga("create", "UA-97488382-1", "auto");
+ga("create", "UA-25158047-1", "auto");
 ga("send", "pageview");
 
 function getElementLocation(element) {
@@ -80,6 +80,10 @@ Object.defineProperty(docEl, "supportedLangs", {
 // -
 // -
 
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 class Typewriter {
   constructor(el, texts) {
     this.writeDelay = 30;
@@ -120,6 +124,7 @@ class Typewriter {
     }
     this.el.textContent = currentText.substring(0, this.el.textContent.length + 1);
     this.lastUpdate = timestamp;
+    this.writeDelay = random(20, 40);
   }
 
   cycle(timestamp) {
@@ -144,6 +149,7 @@ class Typewriter {
     }
     this.el.textContent = this.el.textContent.substring(0, this.el.textContent.length - 1);
     this.lastUpdate = timestamp;
+    this.eraseDelay = random(10, 20);
   }
 }
 

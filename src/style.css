@@ -1,7 +1,7 @@
 @import "resetize";
 
 body {
-  color: #606468;
+  color: #49525a;
   font-family: IBM Plex Sans, sans-serif;
   font-size: 18px;
   padding: 10% 1.5rem;
@@ -68,6 +68,18 @@ li::before {
 .copywrite {
   font-weight: bolder;
   text-align: center;
+}
+
+@keyframes caret {
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.typewrite {
+  animation: caret 0.5s alternate infinite;
+  border-right: 2px solid currentColor;
+  display: inline-block;
 }
 
 @media (max-width: 425px) {
