@@ -16,9 +16,7 @@ function getElementLocation(element) {
 
 function reattachElement(loc) {
   if (!loc.parent.parentElement) {
-    throw Error(
-      "reattachElement: Parent element is no longer present in the DOM tree"
-    );
+    throw Error("reattachElement: Parent element is no longer present in the DOM tree");
   }
   loc.parent.insertBefore(loc.element, loc.parent.children[loc.index]);
 }
@@ -39,10 +37,7 @@ function resolveLanguage(targetedLang) {
     if (lang === targetedLang) {
       return lang;
     }
-    if (
-      !selectedLang &&
-      targetedLang.substring(0, 2) === lang.substring(0, 2)
-    ) {
+    if (!selectedLang && targetedLang.substring(0, 2) === lang.substring(0, 2)) {
       selectedLang = lang;
     }
   }
@@ -80,6 +75,77 @@ Object.defineProperty(docEl, "supportedLangs", {
 // -
 // -
 
+class Typewriter {
+  constructor(el, texts) {
+    this.writeDelay = 30;
+    this.eraseDelay = 10;
+    this.cycleDelay = 3000;
+    this.state = "cycling";
+    this.texts = texts || [];
+    this.index = 0;
+    this.el = el;
+    this.lastUpdate = 0;
+
+    this.update(0);
+  }
+
+  update(timestamp) {
+    switch (this.state) {
+      case "writing":
+        this.write(timestamp);
+        break;
+      case "erasing":
+        this.erase(timestamp);
+        break;
+      case "cycling":
+        this.cycle(timestamp);
+        break;
+    }
+    requestAnimationFrame(timestamp => this.update(timestamp));
+  }
+
+  write(timestamp) {
+    if (timestamp - this.lastUpdate < this.writeDelay) {
+      return;
+    }
+    const currentText = this.texts[this.index];
+    if (this.el.textContent === currentText) {
+      this.state = "cycling";
+      return;
+    }
+    this.el.textContent = currentText.substring(0, this.el.textContent.length + 1);
+    this.lastUpdate = timestamp;
+  }
+
+  cycle(timestamp) {
+    if (timestamp - this.lastUpdate < this.cycleDelay) {
+      return;
+    }
+    this.index += 1;
+    if (this.index < 0 || this.index >= this.texts.length) {
+      this.index = 0;
+    }
+    this.state = "erasing";
+    this.lastUpdate = timestamp;
+  }
+
+  erase(timestamp) {
+    if (timestamp - this.lastUpdate < this.eraseDelay) {
+      return;
+    }
+    if (this.el.textContent.length === 0) {
+      this.state = "writing";
+      return;
+    }
+    this.el.textContent = this.el.textContent.substring(0, this.el.textContent.length - 1);
+    this.lastUpdate = timestamp;
+  }
+}
+
+// -
+// -
+// -
+
 function handle(path) {
   if (path === "/") {
     changeLanguage(document.documentElement.defaultLang);
@@ -89,6 +155,21 @@ function handle(path) {
 }
 
 document.addEventListener("DOMContentLoaded", e => {
+  const typewriter1 = new Typewriter(document.getElementById("what-ive-been-doing-pt-br"), [
+    "construido aplicações na nuvem.",
+    "estudado padrões web.",
+    "lutado com o CSS.",
+    "pesquisado erros no Google.",
+    "lido respostas no Stack Overflow."
+  ]);
+  const typewriter2 = new Typewriter(document.getElementById("what-ive-been-doing-en"), [
+    "building cloud applications.",
+    "learning Web Standards.",
+    "fighting CSS.",
+    "searching errors on Google.",
+    "reading answers on Stack Overflow."
+  ]);
+
   handle(location.pathname);
 });
 
@@ -108,20 +189,14 @@ document.addEventListener("click", e => {
 // -
 // -
 
-const isLocal =
-  /(^|\.)localhost$/.test(location.hostname) ||
-  "127.0.0.1" == location.hostname ||
-  "::1" === location.hostname;
+const isLocal = /(^|\.)localhost$/.test(location.hostname) || "127.0.0.1" == location.hostname || "::1" === location.hostname;
 
 if (!isLocal && "serviceWorker" in navigator) {
   window.addEventListener("load", function() {
     const serviceWorker = "/service-worker.js";
     navigator.serviceWorker.register(serviceWorker).then(
       registration => {
-        console.log(
-          "ServiceWorker registration successful with scope: ",
-          registration.scope
-        );
+        console.log("ServiceWorker registration successful with scope: ", registration.scope);
       },
       err => {
         console.error("ServiceWorker registration failed: ", err);
