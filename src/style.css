@@ -1,8 +1,12 @@
 @import "resetize";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  color: #49525a;
-  font-family: IBM Plex Sans, sans-serif;
+  color: #606c76;
+  font-family: Arimo, sans-serif;
   font-size: 18px;
   padding: 10% 1.5rem;
 }
@@ -27,7 +31,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 h3 + p {
@@ -43,6 +47,12 @@ a:hover {
   text-decoration: underline;
 }
 
+.lead {
+  font-size: 1.5rem;
+  letter-spacing: -0.05em;
+  line-height: 1.125;
+}
+
 .layout {
   display: grid;
   gap: 4rem;
@@ -53,7 +63,6 @@ a:hover {
   display: grid;
   gap: 2rem;
   grid-auto-flow: row;
-  justify-items: flex-start;
   padding: 0 calc(50% - 20rem);
 }
 
@@ -76,14 +85,32 @@ li::before {
   }
 }
 
-.typewrite {
+.typewriter {
   animation: caret 0.5s alternate infinite;
+  /* background-color: ivory; */
   border-right: 2px solid currentColor;
   display: inline-block;
+  white-space: normal;
 }
 
 @media (max-width: 425px) {
   body {
     font-size: 16px;
+  }
+}
+
+@media print {
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  li {
+    break-inside: avoid;
   }
 }

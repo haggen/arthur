@@ -124,7 +124,7 @@ class Typewriter {
     }
     this.el.textContent = currentText.substring(0, this.el.textContent.length + 1);
     this.lastUpdate = timestamp;
-    this.writeDelay = random(20, 40);
+    this.writeDelay = random(10, 100);
   }
 
   cycle(timestamp) {
@@ -149,7 +149,6 @@ class Typewriter {
     }
     this.el.textContent = this.el.textContent.substring(0, this.el.textContent.length - 1);
     this.lastUpdate = timestamp;
-    this.eraseDelay = random(10, 20);
   }
 }
 
@@ -166,20 +165,9 @@ function handle(path) {
 }
 
 document.addEventListener("DOMContentLoaded", e => {
-  const typewriter1 = new Typewriter(document.getElementById("what-ive-been-doing-pt-br"), [
-    "construido aplicações na nuvem.",
-    "estudado padrões web.",
-    "lutado com o CSS.",
-    "pesquisado erros no Google.",
-    "lido respostas no Stack Overflow."
-  ]);
-  const typewriter2 = new Typewriter(document.getElementById("what-ive-been-doing-en"), [
-    "building cloud applications.",
-    "learning Web Standards.",
-    "fighting CSS.",
-    "searching errors on Google.",
-    "reading answers on Stack Overflow."
-  ]);
+  [].forEach.call(document.querySelectorAll(".typewriter"), element => {
+    const typewriter = new Typewriter(element, element.getAttribute("data-variation").split("|"));
+  });
 
   handle(location.pathname);
 });
@@ -203,7 +191,7 @@ document.addEventListener("click", e => {
 const isLocal = /(^|\.)localhost$/.test(location.hostname) || "127.0.0.1" == location.hostname || "::1" === location.hostname;
 
 if (!isLocal && "serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
+  window.addEventListener("load", function () {
     const serviceWorker = "/service-worker.js";
     navigator.serviceWorker.register(serviceWorker).then(
       registration => {
