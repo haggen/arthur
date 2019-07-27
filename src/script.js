@@ -1,3 +1,8 @@
+import ga from "ga-lite";
+
+ga("create", "UA-97488382-1", "auto");
+ga("send", "pageview");
+
 function getElementLocation(element) {
   const loc = {
     element,
