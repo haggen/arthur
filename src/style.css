@@ -1,36 +1,39 @@
 @import "resetize";
 
 html {
+  font-size: 18px;
   scroll-behavior: smooth;
 }
 
 body {
-  color: #43505a;
-  font-size: 18px;
-  padding: 10% 1.5rem;
+  color: #333;
+  font-family: Inter, sans-serif;
+  letter-spacing: -0.025em;
+  padding: 10%;
 }
 
 svg {
   fill: currentColor;
 }
 
-h1,
-h2,
-h3 {
-  letter-spacing: -0.05em;
-  line-height: 1.125;
-}
-
 h1 {
   font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.0375em;
+  line-height: 1.125;
+  text-transform: uppercase;
 }
 
 h2 {
   font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.125;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.125;
 }
 
 h3 + p {
@@ -46,62 +49,91 @@ a:hover {
   text-decoration: underline;
 }
 
+.slogan {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: -0.0375em;
+  line-height: 1.125;
+}
+
 .lead {
   font-size: 1.5rem;
-  letter-spacing: -0.05em;
-  line-height: 1.125;
+}
+
+.list {
+  padding-left: 1.5em;
+  font-size: 1.25rem;
+}
+
+.list li::before {
+  content: "🗹";
+  display: inline-block;
+  margin-left: -1.5em;
+  text-align: center;
+  width: 1.5em;
 }
 
 .layout {
   display: grid;
-  gap: 4rem;
-  grid-auto-flow: row;
+  gap: 4.5rem;
+  grid-template:
+    "a c"
+    "b c"
+    "d c"
+    "e e";
 }
 
 .section {
   display: grid;
-  gap: 2rem;
+  gap: 2.25rem;
   grid-auto-flow: row;
-  padding: 0 calc(50% - 20rem);
 }
 
-li {
-  align-items: center;
-  display: flex;
-  margin-left: 0.75rem;
+.hello {
+  grid-area: a;
 }
 
-li::before {
-  content: url(checkmark.svg);
-  flex: 0 0 1.25rem;
-  margin-right: 0.5rem;
-  max-width: 1.25rem;
-  position: relative;
-  top: 0.125rem;
+.expertise {
+  grid-area: b;
+}
+
+.career {
+  grid-area: c;
 }
 
 .copywrite {
+  grid-area: e;
   font-weight: bolder;
   text-align: center;
 }
 
 @keyframes caret {
   to {
-    border-right-color: transparent;
+    opacity: 0;
   }
 }
 
 .typewriter {
-  animation: caret 0.5s alternate infinite;
-  /* background-color: ivory; */
-  border-right: 2px solid currentColor;
-  display: inline-block;
-  white-space: normal;
 }
 
-@media (max-width: 425px) {
-  body {
+.caret {
+  animation: caret 0.5s alternate infinite;
+}
+
+@media (max-width: 1024px) {
+  html {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-auto-flow: row;
+    grid-template:
+      "a"
+      "b"
+      "c"
+      "e";
   }
 }
 
