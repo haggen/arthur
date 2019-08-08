@@ -1,14 +1,13 @@
 @import "resetize";
 
 html {
+  color: #333;
+  font-family: Inter, sans-serif;
   font-size: 18px;
   scroll-behavior: smooth;
 }
 
 body {
-  color: #333;
-  font-family: Inter, sans-serif;
-  letter-spacing: -0.025em;
   padding: 10%;
 }
 
@@ -16,12 +15,16 @@ svg {
   fill: currentColor;
 }
 
+h1,
+h2,
+h3 {
+  letter-spacing: -0.025em;
+}
+
 h1 {
   font-size: 3rem;
   font-weight: 900;
-  letter-spacing: -0.0375em;
   line-height: 1.125;
-  text-transform: uppercase;
 }
 
 h2 {
@@ -41,36 +44,29 @@ h3 + p {
 }
 
 a {
-  color: dodgerblue;
-  text-decoration: none;
-}
-
-a:hover {
+  color: slateblue;
   text-decoration: underline;
 }
 
-.slogan {
-  font-size: 2rem;
-  font-weight: 300;
-  letter-spacing: -0.0375em;
-  line-height: 1.125;
+a:hover {
+  color: mediumslateblue;
 }
 
 .lead {
-  font-size: 1.5rem;
+  font-weight: bolder;
+  font-size: 1.25em;
 }
 
-.list {
-  padding-left: 1.5em;
-  font-size: 1.25rem;
+ul {
+  padding-left: 2.25em;
 }
 
-.list li::before {
-  content: "🗹";
+li::before {
+  content: "✔️";
   display: inline-block;
-  margin-left: -1.5em;
+  margin-left: -2.25em;
   text-align: center;
-  width: 1.5em;
+  width: 2.25em;
 }
 
 .layout {
