@@ -98,22 +98,9 @@ li::before {
 }
 
 .copywrite {
-  grid-area: e;
   font-weight: bolder;
+  grid-area: e;
   text-align: center;
-}
-
-@keyframes caret {
-  to {
-    opacity: 0;
-  }
-}
-
-.typewriter {
-}
-
-.caret {
-  animation: caret 0.5s alternate infinite;
 }
 
 @media (max-width: 1024px) {
