@@ -61,12 +61,14 @@ ul {
   padding-left: 2.25em;
 }
 
-li::before {
+.checklist li::before {
   content: "✔️";
   display: inline-block;
-  margin-left: -2.25em;
+  font-size: 1.25em;
+  line-height: 1;
+  margin-left: -2rem;
   text-align: center;
-  width: 2.25em;
+  width: 2rem;
 }
 
 .layout {
@@ -121,17 +123,59 @@ li::before {
 }
 
 @media print {
+  body {
+    padding: 0;
+  }
+
+  .layout,
+  .section {
+    display: block;
+  }
+
+  .section + .section {
+    margin-top: 4.5em;
+  }
+
+  .section > * + * {
+    margin-top: 2.25em;
+  }
+
   h1,
   h2,
   h3 {
-    break-after: avoid;
+    break-after: avoid-page;
+  }
+
+  .career {
+    break-before: page;
+  }
+
+  p,
+  li {
+    break-before: avoid-page;
   }
 
   h1,
   h2,
   h3,
   p,
-  li {
-    break-inside: avoid;
+  li,
+  .career > div {
+    break-inside: avoid-page;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a[href^="http"] {
+    color: slateblue;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    font-size: 0.75em;
+    content: " (" attr(href) ")";
   }
 }
