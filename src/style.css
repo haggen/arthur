@@ -56,13 +56,12 @@ a:hover {
 }
 
 ul {
+  columns: 18ch;
   padding-left: 0.5em;
 }
 
-@media (max-width: 768px) {
-  ul {
-    columns: 24ch;
-  }
+li {
+  break-inside: avoid;
 }
 
 span.bullet {
