@@ -2,7 +2,7 @@
 
 html {
   color: #333;
-  font-family: Inter, sans-serif;
+  font-family: Lato, sans-serif;
   font-size: 18px;
   scroll-behavior: smooth;
 }
@@ -22,7 +22,7 @@ h3 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
   line-height: 1.125;
 }
@@ -44,12 +44,43 @@ h3 + p {
 }
 
 a {
-  color: slateblue;
-  text-decoration: underline;
+  box-shadow: inset 0 -0.375em hsl(208, 50%, 37.5%, 0.125);
+  color: hsl(208, 50%, 37.5%);
+  transition: box-shadow 0.125s ease-out;
 }
 
 a:hover {
-  color: mediumslateblue;
+  box-shadow: inset 0 -0.125em hsl(208, 75%, 50%, 0.75);
+  color: hsl(208, 75%, 50%);
+}
+
+span.emoji {
+  display: inline-block;
+  font-size: 1em;
+  max-width: 1em;
+}
+
+span.emoji img {
+  width: 100%;
+}
+
+.portrait {
+  border-radius: 50%;
+  filter: grayscale(100%);
+  height: 9rem;
+  overflow: hidden;
+  width: 9rem;
+}
+
+.portrait img {
+  height: 100%;
+  width: 100%;
+}
+
+.skillset li {
+  display: inline-block;
+  line-height: 2;
+  margin-right: 0.75em;
 }
 
 .lead {
@@ -57,51 +88,49 @@ a:hover {
   font-size: 1.25em;
 }
 
-ul {
-  padding-left: 2.25em;
-}
-
-.checklist li::before {
-  content: "✔️";
-  display: inline-block;
-  font-size: 1.25em;
-  line-height: 1;
-  margin-left: -2rem;
-  text-align: center;
-  width: 2rem;
+.strong {
+  font-weight: 700;
 }
 
 .layout {
   display: grid;
   gap: 4.5rem;
-  grid-template:
-    "a c"
-    "b c"
-    "d c"
-    "e e";
+  grid-auto-columns: 1fr;
+  /* grid-template-columns: 40ch 1fr; */
+  grid-auto-flow: row;
+  grid-template-areas:
+    "h c"
+    "e c"
+    ". c"
+    "f f";
 }
 
 .section {
+  align-content: flex-start;
   display: grid;
   gap: 2.25rem;
   grid-auto-flow: row;
 }
 
-.hello {
-  grid-area: a;
+.section.picture {
+  grid-area: p;
 }
 
-.expertise {
-  grid-area: b;
+.section.hello {
+  grid-area: h;
 }
 
-.career {
+.section.expertise {
+  grid-area: e;
+}
+
+.section.career {
   grid-area: c;
 }
 
-.copywrite {
+.section.footer {
+  grid-area: f;
   font-weight: bolder;
-  grid-area: e;
   text-align: center;
 }
 
@@ -113,12 +142,6 @@ ul {
 
 @media (max-width: 768px) {
   .layout {
-    grid-auto-flow: row;
-    grid-template:
-      "a"
-      "b"
-      "c"
-      "e";
   }
 }
 

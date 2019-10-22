@@ -1,4 +1,5 @@
 import ga from "ga-lite";
+import twemoji from "twemoji";
 
 ga("create", "UA-25158047-1", "auto");
 ga("send", "pageview");
@@ -98,6 +99,7 @@ function handleLocation(path) {
 
 document.addEventListener("DOMContentLoaded", e => {
   handleLocation(location.pathname);
+  twemoji.parse(document.querySelector(".skillset"));
 });
 
 window.addEventListener("popstate", e => {
