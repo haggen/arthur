@@ -99,7 +99,10 @@ function handleLocation(path) {
 
 document.addEventListener("DOMContentLoaded", e => {
   handleLocation(location.pathname);
-  twemoji.parse(document.querySelector(".skillset"));
+
+  [].forEach.call(document.querySelectorAll(".emoji"), emoji =>
+    twemoji.parse(emoji)
+  );
 });
 
 window.addEventListener("popstate", e => {

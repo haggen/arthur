@@ -22,20 +22,21 @@ h3 {
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 3.75rem;
+  font-style: italic;
+  font-weight: lighter;
   line-height: 1.125;
 }
 
 h2 {
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 1.75rem;
+  font-weight: bolder;
   line-height: 1.125;
 }
 
 h3 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: bolder;
   line-height: 1.125;
 }
 
@@ -54,33 +55,33 @@ a:hover {
   color: hsl(208, 75%, 50%);
 }
 
-span.emoji {
-  display: inline-block;
-  font-size: 1em;
-  max-width: 1em;
+ul {
+  padding-left: 0.5em;
 }
 
-span.emoji img {
-  width: 100%;
+span.bullet {
+  display: inline-block;
+  width: 1.5em;
+  line-height: 1;
+  text-align: center;
+}
+
+span.bullet img {
+  display: inline-block;
+  width: 1em;
 }
 
 .portrait {
   border-radius: 50%;
   filter: grayscale(100%);
-  height: 9rem;
+  max-height: 12rem;
   overflow: hidden;
-  width: 9rem;
+  width: 12rem;
 }
 
 .portrait img {
   height: 100%;
   width: 100%;
-}
-
-.skillset li {
-  display: inline-block;
-  line-height: 2;
-  margin-right: 0.75em;
 }
 
 .lead {
@@ -89,17 +90,17 @@ span.emoji img {
 }
 
 .strong {
-  font-weight: 700;
+  font-weight: bolder;
 }
 
 .layout {
   display: grid;
   gap: 4.5rem;
   grid-auto-columns: 1fr;
-  /* grid-template-columns: 40ch 1fr; */
   grid-auto-flow: row;
   grid-template-areas:
-    "h c"
+    "h p"
+    "e c"
     "e c"
     ". c"
     "f f";
@@ -114,6 +115,7 @@ span.emoji img {
 
 .section.picture {
   grid-area: p;
+  justify-items: center;
 }
 
 .section.hello {
@@ -142,6 +144,12 @@ span.emoji img {
 
 @media (max-width: 768px) {
   .layout {
+    grid-template-areas:
+      "p"
+      "h"
+      "e"
+      "c"
+      "f";
   }
 }
 
