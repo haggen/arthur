@@ -1,10 +1,49 @@
-@import "resetize";
+@import "~resetize";
+
+@mixin color-scheme($scheme) {
+  @media (prefers-color-scheme: $scheme) {
+    @content;
+  }
+  &[color-scheme="#{$scheme}"] {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
 
 html {
-  color: #333;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: Lato, sans-serif;
   font-size: 18px;
   scroll-behavior: smooth;
+  transition: color, background-color 0.25s ease-out;
+
+  @include color-scheme(light) {
+    --foreground: hsl(0, 0%, 20%);
+    --background: hsl(0, 0%, 100%);
+    --primary: hsl(208, 50%, 37%);
+    --primary-transparent: hsla(208, 50%, 37%, 0.125);
+    --primary-active: hsl(208, 75%, 50%);
+    --primary-active-transparent: hsl(208, 75%, 50%, 0.625);
+  }
+
+  @include color-scheme(dark) {
+    --foreground: hsl(0, 0%, 90%);
+    --background: hsl(0, 0%, 10%);
+    --primary: hsl(208, 62%, 62%);
+    --primary-transparent: hsla(208, 62%, 62%, 0.125);
+    --primary-active: hsl(208, 100%, 62%);
+    --primary-active-transparent: hsl(208, 100%, 62%, 0.625);
+  }
+
+  @include tablet {
+    font-size: 16px;
+  }
 }
 
 body {
@@ -51,14 +90,14 @@ h3 + p {
 }
 
 a {
-  box-shadow: inset 0 -0.375em hsl(208, 50%, 37.5%, 0.125);
-  color: hsl(208, 50%, 37.5%);
+  box-shadow: inset 0 -0.375em var(--primary-transparent);
+  color: var(--primary);
   transition: box-shadow 0.125s ease-out;
 }
 
 a:hover {
-  box-shadow: inset 0 -0.125em hsl(208, 75%, 50%, 0.75);
-  color: hsl(208, 75%, 50%);
+  box-shadow: inset 0 -0.125em var(--primary-active-transparent);
+  color: var(--primary-active);
 }
 
 ul {
@@ -82,11 +121,15 @@ span.bullet img {
   width: 1em;
 }
 
-.lang {
+.toolbar {
   position: absolute;
   top: 0;
   right: 0;
   padding: 0.75rem 1.5rem;
+}
+
+.toolbar a + a {
+  margin-left: 0.75rem;
 }
 
 .portrait {
@@ -124,6 +167,17 @@ span.bullet img {
     "f f";
 }
 
+@media (max-width: 768px) {
+  .layout {
+    grid-template-areas:
+      "p"
+      "h"
+      "e"
+      "c"
+      "f";
+  }
+}
+
 .section {
   align-content: flex-start;
   display: grid;
@@ -152,23 +206,6 @@ span.bullet img {
   grid-area: f;
   font-weight: bolder;
   text-align: center;
-}
-
-@media (max-width: 1024px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .layout {
-    grid-template-areas:
-      "p"
-      "h"
-      "e"
-      "c"
-      "f";
-  }
 }
 
 @media print {

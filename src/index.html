@@ -26,13 +26,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preload" href="/script.js" as="script" />
-    <link rel="preload" href="/style.css" as="style" />
+    <link rel="preload" href="/style.scss" as="style" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lato:300i,400,400i,900&display=swap"
       media="all"
     />
-    <link rel="stylesheet" href="/style.css" media="all" />
+    <link rel="stylesheet" href="/style.scss" media="all" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -41,9 +41,10 @@
   </head>
 
   <body>
-    <div class="lang">
+    <div class="toolbar">
       <a href="/en" local lang="pt-BR">Read in English</a>
       <a href="/pt-BR" local lang="en">Ler em Português</a>
+      <a href="javascript:;" data-toggle-color-scheme>🔆</a>
     </div>
 
     <main class="layout">

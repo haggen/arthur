@@ -89,6 +89,39 @@ function changeLanguage(lang) {
 // -
 // -
 
+function getPreferredColorScheme() {
+  const prefers = value =>
+    window.matchMedia(`(prefers-color-scheme: ${value})`).matches;
+
+  if (prefers("dark")) {
+    return "dark";
+  } else if (prefers("light")) {
+    return "light";
+  }
+  return null;
+}
+
+function toggleColorScheme() {
+  const selectedValue = docEl.getAttribute("color-scheme");
+  if (selectedValue === "dark") {
+    docEl.setAttribute("color-scheme", "light");
+  } else {
+    docEl.setAttribute("color-scheme", "dark");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", e => {
+  const preferredValue = getPreferredColorScheme();
+  docEl.setAttribute("color-scheme", preferredValue);
+
+  const toggle = document.querySelector("[data-toggle-color-scheme]");
+  toggle.addEventListener("click", e => toggleColorScheme());
+});
+
+// -
+// -
+// -
+
 function handleLocation(path) {
   if (path === "/") {
     changeLanguage(document.documentElement.defaultLang);
