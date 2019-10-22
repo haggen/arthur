@@ -28,6 +28,12 @@ h1 {
   line-height: 1.125;
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
 h2 {
   font-size: 1.75rem;
   font-weight: bolder;
@@ -74,6 +80,13 @@ span.bullet {
 span.bullet img {
   display: inline-block;
   width: 1em;
+}
+
+.lang {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1.5rem;
 }
 
 .portrait {
