@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", e => {
 // -
 // -
 
-function handleLocation(path) {
+function handleNavigation(path) {
   if (path === "/") {
     changeLanguage(document.documentElement.defaultLang);
   } else {
@@ -131,22 +131,22 @@ function handleLocation(path) {
 }
 
 document.addEventListener("DOMContentLoaded", e => {
-  handleLocation(location.pathname);
-
   [].forEach.call(document.querySelectorAll(".emoji"), emoji =>
     twemoji.parse(emoji)
   );
+
+  handleNavigation(location.pathname);
 });
 
 window.addEventListener("popstate", e => {
-  handleLocation(location.pathname);
+  handleNavigation(location.pathname);
 });
 
 document.addEventListener("click", e => {
   if (e.target.closest("a[local]")) {
     e.preventDefault();
     history.pushState(null, null, e.target.href);
-    handleLocation(location.pathname);
+    handleNavigation(location.pathname);
   }
 });
 
