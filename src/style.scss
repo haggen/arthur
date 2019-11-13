@@ -38,7 +38,7 @@ html {
     --primary: hsl(208, 62%, 62%);
     --primary-transparent: hsla(208, 62%, 62%, 0.125);
     --primary-active: hsl(208, 100%, 62%);
-    --primary-active-transparent: hsl(208, 100%, 62%, 0.625);
+    --primary-active-transparent: hsl(208, 100%, 62%, 0.875);
   }
 
   @include tablet {
@@ -211,6 +211,10 @@ span.bullet img {
 @media print {
   body {
     padding: 0;
+  }
+
+  .toolbar {
+    display: none;
   }
 
   .layout,
