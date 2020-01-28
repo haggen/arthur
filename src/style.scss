@@ -24,21 +24,21 @@ html {
   transition: color, background-color 0.25s ease-out;
 
   @include color-scheme(light) {
-    --foreground: hsl(0, 0%, 20%);
+    --foreground: hsl(220, 0%, 20%);
     --background: hsl(0, 0%, 100%);
-    --primary: hsl(208, 50%, 37%);
-    --primary-transparent: hsla(208, 50%, 37%, 0.125);
-    --primary-active: hsl(208, 75%, 50%);
-    --primary-active-transparent: hsl(208, 75%, 50%, 0.625);
+    --primary: hsl(220, 80%, 50%);
+    --primary-transparent: hsla(220, 80%, 50%, 0.125);
+    --primary-active: hsl(220, 90%, 45%);
+    --primary-active-transparent: hsl(220, 90%, 45%, 0.875);
   }
 
   @include color-scheme(dark) {
     --foreground: hsl(0, 0%, 90%);
-    --background: hsl(0, 0%, 10%);
-    --primary: hsl(208, 62%, 62%);
-    --primary-transparent: hsla(208, 62%, 62%, 0.125);
-    --primary-active: hsl(208, 100%, 62%);
-    --primary-active-transparent: hsl(208, 100%, 62%, 0.875);
+    --background: hsl(220, 5%, 15%);
+    --primary: hsl(220, 100%, 70%);
+    --primary-transparent: hsla(220, 100%, 70%, 0.125);
+    --primary-active: hsl(220, 90%, 75%);
+    --primary-active-transparent: hsl(220, 90%, 75%, 0.875);
   }
 
   @include smaller-screen {
@@ -99,6 +99,7 @@ a {
   transition: box-shadow 0.125s ease-out;
 }
 
+a:focus,
 a:hover {
   box-shadow: inset 0 -0.125em var(--primary-active-transparent);
   color: var(--primary-active);
