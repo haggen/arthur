@@ -1,5 +1,4 @@
 {
-  "name": "arthur",
   "private": true,
   "version": "1.0.1",
   "repository": "https://github.com/haggen/arthur.git",
@@ -7,7 +6,7 @@
   "license": "MIT",
   "main": "src/index.html",
   "scripts": {
-    "start": "parcel src/index.html",
+    "start": "parcel serve src/index.html --host 0.0.0.0 --no-hmr",
     "build": "parcel build src/index.html"
   },
   "dependencies": {
@@ -16,7 +15,7 @@
     "parcel-plugin-static-files-copy": "^2.3.1",
     "parcel-plugin-sw-precache": "^1.1.1",
     "resetize": "^26.0.0",
-    "sass": "^1.25.0",
+    "sass": "^1.26.3",
     "twemoji": "^12.1.5"
   },
   "prettier": {
