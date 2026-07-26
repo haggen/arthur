@@ -1,24 +1,17 @@
 {
+  "name": "arthur",
+  "version": "0.0.0",
   "private": true,
-  "version": "1.0.1",
-  "repository": "https://github.com/haggen/arthur.git",
-  "author": "Arthur <arthur@corenzan.com>",
-  "license": "MIT",
-  "main": "src/index.html",
+  "type": "module",
   "scripts": {
-    "start": "parcel serve src/index.html --host 0.0.0.0 --no-hmr",
-    "build": "parcel build src/index.html"
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "dependencies": {
-    "ga-lite": "^2.0.5",
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-static-files-copy": "^2.3.1",
-    "parcel-plugin-sw-precache": "^1.1.1",
-    "resetize": "^26.0.0",
-    "sass": "^1.26.3",
-    "twemoji": "^12.1.5"
-  },
-  "prettier": {
-    "htmlWhitespaceSensitivity": "strict"
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "linkedom": "^0.18.13",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.1.1"
   }
 }
