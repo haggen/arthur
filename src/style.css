@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 html {
-    background-color: var(--color-stone-50);
-    color: var(--color-stone-900);
+    background-color: var(--color-white);
+    color: var(--color-neutral-900);
+
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--color-neutral-900);
+        color: var(--color-neutral-100);
+    }
 }
 
 main {
@@ -12,7 +17,12 @@ main {
 }
 
 a {
-    color: var(--color-blue-600);
+    color: var(--color-blue-700);
+    text-decoration: underline;
+
+    @media (prefers-color-scheme: dark) {
+        color: var(--color-indigo-300);
+    }
 }
 
 h1,
