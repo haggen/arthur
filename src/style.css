@@ -1,91 +1,95 @@
 @import "tailwindcss";
 
 html {
-    background-color: var(--color-white);
-    color: var(--color-neutral-900);
+    @apply font-serif bg-neutral-50 text-neutral-900;
 
     @media (prefers-color-scheme: dark) {
-        background-color: var(--color-neutral-900);
-        color: var(--color-neutral-100);
+        @apply bg-neutral-800 text-neutral-100;
     }
 }
 
 main {
-    margin: 1rem auto;
-    max-width: 70ch;
-    padding-inline: 1rem;
+    @apply container mx-auto p-6 max-w-3xl;
 }
 
 a {
-    color: var(--color-blue-700);
-    text-decoration: underline;
+    @apply text-blue-700 underline;
 
     @media (prefers-color-scheme: dark) {
-        color: var(--color-indigo-300);
+        @apply text-indigo-300;
     }
 }
 
 h1,
 h2,
 h3 {
-    font-weight: bold;
+    @apply font-bold;
 }
 
 h1 {
-    font-size: 1.25rem;
+    @apply text-xl;
 }
 
 h2 {
-    font-size: 1.5rem;
+    @apply text-2xl;
 }
 
 h3 {
-    font-size: 1.25rem;
+    @apply text-xl;
 
     small {
-        white-space: nowrap;
+        @apply text-nowrap;
     }
 }
 
 .lead {
-    font-size: 1.25rem;
+    @apply text-xl;
 }
 
 .portrait {
-    float: right;
-    margin-inline-start: 2rem;
+    @apply float-right ms-3;
 
     img {
-        border-radius: 0.25rem;
-        width: 6rem;
+        @apply size-24;
 
         @media (min-width: 48rem) {
-            width: 10rem;
+            @apply size-32;
         }
     }
 }
 
 .stack > * + * {
-    margin-block-start: 2rem;
+    @apply mbs-8;
 }
 
 .tigh-stack > * + * {
-    margin-block-start: 1rem;
+    @apply mbs-4;
 }
 
 .sparse-stack > * + * {
-    margin-block-start: 2rem;
+    @apply mbs-8;
 
     @media (min-width: 48rem) {
-        margin-block-start: 4rem;
+        @apply mbs-16;
     }
 }
 
 .list {
-    padding-inline-start: 1rem;
+    @apply ps-4;
 
     & > li {
-        padding-inline-start: 0.5rem;
-        list-style-type: "—";
+        @apply ps-2 list-["—"];
+    }
+
+    & > li + li {
+        @apply mbs-2;
+    }
+}
+
+.word-cloud {
+    @apply flex flex-wrap overflow-hidden -ms-4 text-sm italic;
+
+    & li::before {
+        @apply inline-block content-["·"] w-4 text-center;
     }
 }
