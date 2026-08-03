@@ -23,7 +23,7 @@ a {
 h1,
 h2,
 h3 {
-    @apply font-bold;
+    @apply font-bold text-balance;
 }
 
 h1 {
@@ -43,7 +43,7 @@ h3 {
 }
 
 .lead {
-    @apply text-xl;
+    @apply text-xl text-balance;
 }
 
 .portrait {
@@ -78,7 +78,7 @@ h3 {
     @apply ps-4;
 
     & > li {
-        @apply ps-2 list-["—"];
+        @apply ps-2 list-["—"] text-balance;
     }
 
     & > li + li {
