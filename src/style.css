@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 html {
-    @apply font-serif bg-neutral-50 text-neutral-900;
+    @apply bg-slate-50 text-slate-900;
 
     @media (prefers-color-scheme: dark) {
-        @apply bg-neutral-800 text-neutral-100;
+        @apply bg-slate-950 text-slate-100;
     }
 }
 
@@ -13,10 +13,10 @@ main {
 }
 
 a {
-    @apply text-blue-700 underline;
+    @apply text-blue-600 underline;
 
     @media (prefers-color-scheme: dark) {
-        @apply text-indigo-300;
+        @apply text-blue-300;
     }
 }
 
@@ -43,17 +43,15 @@ h3 {
 }
 
 .lead {
-    @apply text-xl text-balance;
+    @apply text-2xl;
 }
 
 .portrait {
-    @apply float-right ms-3;
-
     img {
-        @apply size-24;
+        @apply float-right w-30 h-auto aspect-3/4 ml-6 rounded object-cover;
 
         @media (min-width: 48rem) {
-            @apply size-32;
+            @apply w-44;
         }
     }
 }
@@ -67,7 +65,7 @@ h3 {
 }
 
 .sparse-stack > * + * {
-    @apply mbs-8;
+    @apply mbs-10;
 
     @media (min-width: 48rem) {
         @apply mbs-16;
@@ -83,13 +81,5 @@ h3 {
 
     & > li + li {
         @apply mbs-2;
-    }
-}
-
-.word-cloud {
-    @apply flex flex-wrap overflow-hidden -ms-4 text-sm italic;
-
-    & li::before {
-        @apply inline-block content-["·"] w-4 text-center;
     }
 }
