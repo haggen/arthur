@@ -43,16 +43,13 @@ h3 {
 }
 
 .lead {
-    @apply text-2xl;
+    @apply text-xl;
 }
 
 .portrait {
     img {
-        @apply float-right w-30 h-auto aspect-3/4 ml-6 rounded object-cover;
-
-        @media (min-width: 48rem) {
-            @apply w-44;
-        }
+        @apply w-full mx-auto aspect-21/9 rounded object-cover;
+        @apply sm:float-right sm:w-36 sm:aspect-3/4 sm:ml-6 sm:mb-4 sm:-mt-4;
     }
 }
 
@@ -65,7 +62,7 @@ h3 {
 }
 
 .sparse-stack > * + * {
-    @apply mbs-10;
+    @apply mbs-12;
 
     @media (min-width: 48rem) {
         @apply mbs-16;
@@ -76,7 +73,7 @@ h3 {
     @apply ps-4;
 
     & > li {
-        @apply ps-2 list-["—"] text-balance;
+        @apply ps-2 list-["—"];
     }
 
     & > li + li {
