@@ -43,7 +43,7 @@ h3 {
 }
 
 .lead {
-    @apply text-xl;
+    @apply text-2xl sm:text-4xl;
 }
 
 .portrait {
