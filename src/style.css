@@ -9,7 +9,7 @@ html {
 }
 
 main {
-    @apply container mx-auto p-6 max-w-3xl;
+    @apply container mx-auto p-6 max-w-3xl space-y-12 md:space-y-16;
 }
 
 a {
@@ -39,44 +39,5 @@ h3 {
 
     small {
         @apply text-nowrap;
-    }
-}
-
-.lead {
-    @apply text-2xl sm:text-4xl;
-}
-
-.portrait {
-    img {
-        @apply w-full mx-auto aspect-21/9 rounded object-cover;
-        @apply sm:float-right sm:w-36 sm:aspect-3/4 sm:ml-6 sm:mb-4 sm:-mt-4;
-    }
-}
-
-.stack > * + * {
-    @apply mbs-8;
-}
-
-.tigh-stack > * + * {
-    @apply mbs-4;
-}
-
-.sparse-stack > * + * {
-    @apply mbs-12;
-
-    @media (min-width: 48rem) {
-        @apply mbs-16;
-    }
-}
-
-.list {
-    @apply ps-4;
-
-    & > li {
-        @apply ps-2 list-["—"];
-    }
-
-    & > li + li {
-        @apply mbs-2;
     }
 }
