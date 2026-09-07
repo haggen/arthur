@@ -12,11 +12,19 @@ main {
     @apply container mx-auto p-6 max-w-3xl space-y-12 md:space-y-16;
 }
 
-a {
+a,
+.link {
     @apply text-blue-600 underline;
 
     @media (prefers-color-scheme: dark) {
         @apply text-blue-300;
+    }
+}
+
+@media print {
+    a[href]::after {
+        @apply text-xs;
+        content: "[" attr(href) "]";
     }
 }
 
