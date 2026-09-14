@@ -24,14 +24,14 @@ a,
 @media print {
     a[href]::after {
         @apply text-xs;
-        content: "[" attr(href) "]";
+        content: " [" attr(href) "]";
     }
 }
 
 h1,
 h2,
 h3 {
-    @apply font-bold text-balance;
+    @apply font-bold text-balance break-after-avoid;
 }
 
 h1 {
