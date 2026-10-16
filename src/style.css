@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 html {
-  @apply bg-slate-50 text-slate-900;
+  @apply bg-mist-100 text-mist-900;
 
   @media (prefers-color-scheme: dark) {
-    @apply bg-slate-950 text-slate-100;
+    @apply bg-mist-900 text-mist-100;
   }
 }
 
@@ -15,10 +15,10 @@ main {
 
 a,
 .link {
-  @apply text-blue-600 underline;
+  @apply font-serif font-thin text-orange-700 underline;
 
   @media (prefers-color-scheme: dark) {
-    @apply text-blue-300;
+    @apply text-orange-200;
   }
 }
 
