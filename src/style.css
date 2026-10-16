@@ -10,6 +10,7 @@ html {
 
 main {
   @apply container mx-auto p-6 max-w-3xl space-y-12 md:space-y-16;
+  counter-reset: footnote;
 }
 
 a,
