@@ -15,7 +15,7 @@ main {
 
 a,
 .link {
-  @apply font-serif font-thin text-orange-700 underline;
+  @apply text-orange-700 underline decoration-1;
 
   @media (prefers-color-scheme: dark) {
     @apply text-orange-200;
@@ -25,7 +25,7 @@ a,
 h1,
 h2,
 h3 {
-  @apply font-bold text-balance break-after-avoid;
+  @apply font-serif font-bold text-balance break-after-avoid;
 }
 
 h1 {
