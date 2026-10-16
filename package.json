@@ -12,6 +12,6 @@
     "@tailwindcss/vite": "^4.3.3",
     "linkedom": "^0.18.13",
     "tailwindcss": "^4.3.3",
-    "vite": "^8.1.1"
+    "vite": "^8.3.4"
   }
 }

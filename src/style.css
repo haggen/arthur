@@ -1,51 +1,44 @@
 @import "tailwindcss";
 
 html {
-    @apply bg-slate-50 text-slate-900;
+  @apply bg-slate-50 text-slate-900;
 
-    @media (prefers-color-scheme: dark) {
-        @apply bg-slate-950 text-slate-100;
-    }
+  @media (prefers-color-scheme: dark) {
+    @apply bg-slate-950 text-slate-100;
+  }
 }
 
 main {
-    @apply container mx-auto p-6 max-w-3xl space-y-12 md:space-y-16;
+  @apply container mx-auto p-6 max-w-3xl space-y-12 md:space-y-16;
 }
 
 a,
 .link {
-    @apply text-blue-600 underline;
+  @apply text-blue-600 underline;
 
-    @media (prefers-color-scheme: dark) {
-        @apply text-blue-300;
-    }
-}
-
-@media print {
-    a[href]::after {
-        @apply text-xs;
-        content: " [" attr(href) "]";
-    }
+  @media (prefers-color-scheme: dark) {
+    @apply text-blue-300;
+  }
 }
 
 h1,
 h2,
 h3 {
-    @apply font-bold text-balance break-after-avoid;
+  @apply font-bold text-balance break-after-avoid;
 }
 
 h1 {
-    @apply text-xl;
+  @apply text-xl;
 }
 
 h2 {
-    @apply text-2xl;
+  @apply text-2xl;
 }
 
 h3 {
-    @apply text-xl;
+  @apply text-xl;
 
-    small {
-        @apply text-nowrap;
-    }
+  small {
+    @apply text-nowrap;
+  }
 }

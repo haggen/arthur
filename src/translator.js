@@ -1,9 +1,5 @@
 import { parseHTML } from "linkedom";
-import {
-  getTranslation,
-  defaultLanguage,
-  availableLanguages,
-} from "./translations.js";
+import { getTranslation, defaultLanguage, availableLanguages } from "./translations.js";
 
 const translatableElementAttr = "translate";
 
@@ -101,10 +97,7 @@ export function plugin() {
         return redirectToDefaultLang;
       }
 
-      return translateHtml(
-        html,
-        availableLanguages().includes(lang) ? lang : defaultLanguage(),
-      );
+      return translateHtml(html, availableLanguages().includes(lang) ? lang : defaultLanguage());
     },
 
     generateBundle(_, bundle) {

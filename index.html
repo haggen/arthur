@@ -1,337 +1,313 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charset="utf-8" />
-        <meta
-            name="description"
-            content="Arthur is a passionate software engineer and technical lead with over 18 years of experience."
-            translate="content"
-        />
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Arthur is a passionate software engineer and technical leader with 20+ years of experience."
+      translate="content"
+    />
 
-        <title>Arthur Corenzan</title>
+    <title>Arthur Corenzan</title>
 
-        <link rel="icon" type="image/svg+xml" href="/src/icon.svg" />
-        <link rel="stylesheet" href="/src/style.css" />
-        <script type="module" src="/src/script.js"></script>
-    </head>
-    <body>
-        <main>
-            <aside class="text-sm">
-                <p>
-                    <span translate>Also available in</span>
-                    <a href="/en">English</a>, <a href="/pt">Português</a>.
-                </p>
-            </aside>
+    <link rel="icon" type="image/svg+xml" href="/src/icon.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/script.js"></script>
+  </head>
 
-            <header
-                class="flex flex-col sm:flex-row-reverse gap-4 sm:gap-12 items-center"
+  <body>
+    <main>
+      <aside class="text-sm print:hidden">
+        <p>
+          <span translate>Also available in</span>
+          <a href="/en">English</a>, <a href="/pt">Português</a>.
+        </p>
+      </aside>
+
+      <header class="flex flex-col sm:flex-row-reverse gap-4 sm:gap-12 items-center">
+        <picture class="print:hidden">
+          <source type="image/webp" srcset="/src/arthur.webp" />
+          <img
+            src="/src/arthur.jpg"
+            alt="Portrait of Arthur Corenzan"
+            class="w-full sm:flex-none sm:basis-64 sm:min-w-64 sm:max-w-64 aspect-21/9 sm:aspect-3/4 rounded object-cover"
+            loading="lazy"
+            width="1235"
+            height="1235"
+            translate="alt"
+          />
+        </picture>
+
+        <div class="space-y-4">
+          <h1 class="hidden print:block">Arthur Corenzan</h1>
+
+          <p class="text-2xl sm:text-4xl" translate>
+            I'm Arthur, a software engineer and technical leader based in Brazil with 20+ years of
+            experience.
+          </p>
+
+          <p class="text text-slate-600 dark:text-slate-400" translate>
+            Open to remote Software Engineer or Technical Lead roles · Portuguese (Native), English
+            (Professional).
+          </p>
+
+          <p>
+            <span class="print:hidden">
+              <button type="button" class="link" onclick="print()" translate>Download PDF</button>
+              ·
+            </span>
+            <a href="mailto:arthur@corenzan.com">Email</a>
+            ·
+            <a href="https://www.linkedin.com/in/haggen/">LinkedIn</a>
+            ·
+            <a href="https://github.com/haggen">GitHub</a>
+            ·
+            <a href="https://bsky.app/profile/haggen.bsky.social">Bluesky</a>
+          </p>
+        </div>
+      </header>
+
+      <section class="space-y-8">
+        <h2 translate>Profile</h2>
+
+        <div class="space-y-4">
+          <p translate>
+            I've been building software for over 20 years and have worked on dozens of websites and
+            applications end-to-end. I have experience across the entire product lifecycle, from
+            requirements, design, and information architecture to infrastructure, scale
+            optimization, technical writing, incident response, and team building.
+          </p>
+          <p translate>
+            I thrive on taking ownership of a product's development process and its team. I like to
+            bridge technology, business, and user experience, advising leadership, interpreting
+            feedback, designing workflows, and steering the technical trade-offs necessary to make
+            the business viable and deliver real value.
+          </p>
+        </div>
+      </section>
+
+      <section class="space-y-8">
+        <h2 translate>Past Experience</h2>
+
+        <article class="space-y-4">
+          <h3 translate>
+            Technical Lead at Companhia de Estágios
+            <small>(2024–2026, 2.5 years)</small>
+          </h3>
+          <ul class="list-['—'] ps-4 space-y-2 *:ps-2">
+            <li translate>
+              Led an engineering team of 15 through technical interviews, regular 1:1s, and
+              cross-seniority mentorship, while establishing internal engineering standards, product
+              documentation, and security and privacy compliance practices.
+            </li>
+            <li translate>
+              Architected and delivered an LLM-powered candidate evaluation and job-matching system
+              using TypeScript and the Vercel AI SDK, processing over 300,000 candidates across 100+
+              roles.
+            </li>
+            <li translate>
+              Maintained and scaled the core apprenticeship and internship platform—integrating CRM,
+              ATS, Contract Lifecycle Management (CLM), and automated billing—handling over 50
+              million monthly pageviews for enterprise clients including Amazon, Twitter, and
+              Shopee.
+            </li>
+            <li translate>
+              Collaborated with domain experts to shape technical solutions and managed AWS cloud
+              infrastructure, Linux servers, PostgreSQL databases, and PHP/Next.js services.
+            </li>
+          </ul>
+        </article>
+        <article class="space-y-4">
+          <h3 translate>
+            Technical Lead at Bluy
+            <small>(2020–2024, 4 years)</small>
+          </h3>
+          <ul class="list-['—'] ps-4 space-y-2 *:ps-2">
+            <li translate>
+              Spearheaded the end-to-end architecture and development of an Applicant Tracking
+              System (ATS) from the ground up using Python, Next.js, PostgreSQL, and AWS.
+            </li>
+            <li translate>
+              Built and led a team of 7 engineers, running technical hiring, regular 1:1s, and
+              mentorship while partnering with the Product Owner to translate business goals into
+              technical roadmaps.
+            </li>
+            <li translate>
+              Scaled platform reliability, cloud infrastructure, and security and privacy compliance
+              to power large-scale enterprise recruiting programs exceeding 15,000 candidates per
+              campaign.
+            </li>
+          </ul>
+        </article>
+        <article class="space-y-4">
+          <h3 translate>
+            Consultant and Web Developer at Crz
+            <small>(2008–2020, 12 years)</small>
+          </h3>
+          <ul class="list-['—'] ps-4 space-y-2 *:ps-2">
+            <li translate>
+              Built a high-capacity support ticket platform and custom form builder for a major
+              direct-selling company, serving over 300,000 independent sales representatives and
+              acting as the blueprint for international branches.
+            </li>
+            <li translate>
+              Developed a digital archive for a transport and logistics publisher, processing and
+              indexing over 50 years of magazine issues for online browsing.
+            </li>
+            <li translate>
+              Created a multilingual tourism portal and custom CMS for a major Brazilian city,
+              featuring interactive Google Maps integration, scenic routes, public service
+              information, and news.
+            </li>
+            <li translate>
+              Delivered full-stack web applications, custom APIs, and cloud infrastructure across
+              diverse client stacks including JavaScript/TypeScript, Node.js, Ruby, Python, Go, PHP,
+              and PostgreSQL.
+            </li>
+          </ul>
+        </article>
+        <article class="space-y-4">
+          <h3 translate>
+            Web Developer at Visie
+            <small>(2011, 1 year)</small>
+          </h3>
+          <ul class="list-['—'] ps-4 space-y-2 *:ps-2">
+            <li translate>
+              Maintained and scaled a Python-based digital-to-physical mail automation system that
+              digitized, tracked, and printed transactional mail at high volume, processing tens of
+              millions of items per batch.
+            </li>
+            <li translate>
+              Translated design specifications into responsive, reliable front-end interfaces and
+              custom WordPress solutions.
+            </li>
+          </ul>
+        </article>
+        <article class="space-y-4">
+          <h3 translate>
+            Web Developer at Folha de S.Paulo
+            <small>(2009–2011, 2 years)</small>
+          </h3>
+          <ul class="list-['—'] ps-4 space-y-2 *:ps-2">
+            <li translate>
+              Developed bespoke PHP, MySQL, and front-end solutions for one of Brazil's largest news
+              portals, delivering interactive news specials, internal editorial tools, and marketing
+              sites across company branches.
+            </li>
+          </ul>
+        </article>
+        <article class="space-y-4">
+          <h3 translate>
+            Personal Projects and Non-Profit Work
+            <small>(2001–present)</small>
+          </h3>
+          <ul class="list-['—'] ps-4 space-y-2 *:ps-2">
+            <li translate>
+              Continuously build and maintain open-source projects—ranging from developer tools and
+              libraries to web applications and games—available on
+              <a href="https://github.com/haggen">my GitHub</a>.
+            </li>
+            <li translate>
+              Migrated a school management system from Classic ASP to ASP.NET for a local business
+              school and built several institutional websites for a regional non-profit organization
+              (NGO).
+            </li>
+            <li translate>
+              Taught myself PHP and SQL at age 11 to build a registration website and bracket
+              generation system for a video game tournament organized by a local LAN center.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="space-y-8">
+        <h2 translate>Publications and Public Speaking</h2>
+
+        <ul class="list-['—'] ps-4 space-y-4 *:ps-2">
+          <li translate>
+            <strong>Introduction to Information Security at Companhia de Estágios (2025).</strong>
+            Co-authored and delivered a company-wide presentation on information security concepts
+            and best practices for handling sensitive data safely.
+          </li>
+          <li translate>
+            <strong>Effective Workplace Communication at Companhia de Estágios (2024).</strong>
+            Delivered a talk during a software engineering team merger, focusing on effective
+            communication habits for meetings and conversations.
+          </li>
+          <li translate>
+            <strong
+              ><a
+                href="https://www.youtube.com/watch?v=RugYCTCbUO8&list=PLEMcImEccKhTF_iwRUVIhghkFsE8Tmwbz&index=1"
+                >Building a React app, from scope to deploy</a
+              >
+              on Twitch (2022).</strong
             >
-                <picture class="print:hidden">
-                    <source type="image/webp" srcset="/src/arthur.webp" />
-                    <img
-                        src="/src/arthur.jpg"
-                        alt="Portrait of Arthur Corenzan"
-                        class="w-full sm:flex-none sm:basis-64 sm:min-w-64 sm:max-w-64 aspect-21/9 sm:aspect-3/4 rounded object-cover"
-                        loading="lazy"
-                        width="1235"
-                        height="1235"
-                        translate="alt"
-                    />
-                </picture>
+            Hosted a live stream demonstrating the end-to-end development of a web application,
+            covering requirements gathering, UI design, data modeling, and deployment.
+          </li>
+          <li translate>
+            <strong
+              ><a href="https://dev.to/haggen/lazy-load-embedded-youtube-videos-520g"
+                >Lazy load embedded YouTube videos</a
+              >
+              on DEV Community (2019).</strong
+            >
+            Authored a technical article on mitigating performance issues caused by YouTube embeds
+            on a static website.
+          </li>
+          <li translate>
+            <strong>Introduction to Ruby and Ruby on Rails at UNIVESP (2015).</strong>
+            Delivered an introductory presentation on the Ruby language and Ruby on Rails framework
+            to a development team at Universidade Virtual do Estado de São Paulo.
+          </li>
+        </ul>
+      </section>
 
-                <div class="space-y-4">
-                    <p class="text-2xl sm:text-4xl" translate>
-                        I'm Arthur, a software engineer and technical leader
-                        based in Brazil with 20+ years of experience.
-                    </p>
+      <section class="space-y-8">
+        <h2 translate>Expertise</h2>
 
-                    <p>
-                        <button
-                            type="button"
-                            class="link"
-                            onclick="print()"
-                            translate
-                        >
-                            Download PDF
-                        </button>
-                        ·
-                        <a href="mailto:arthur@corenzan.com">E-mail</a>
-                        ·
-                        <a href="https://www.linkedin.com/in/haggen/"
-                            >LinkedIn</a
-                        >
-                        ·
-                        <a href="https://github.com/haggen">GitHub</a>
-                        ·
-                        <a href="https://bsky.app/profile/haggen.bsky.social"
-                            >Bluesky</a
-                        >
-                    </p>
-                </div>
-            </header>
+        <ul class="*:inline *:not-first:before:content-['·_'] *:before:inline">
+          <li>TypeScript</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>Ruby</li>
+          <li>Go</li>
+          <li>PHP</li>
+          <li>Node.js</li>
+          <li>Architecture, Systems Design</li>
+          <li>Distributed Systems, Microservices</li>
+          <li>Event-Driven Architecture (Message Queues, Pub/Sub)</li>
+          <li>Domain-Driven Design (DDD), Clean Architecture</li>
+          <li>API Design (REST, GraphQL, RPC)</li>
+          <li>High Availability, Scalability, Systems Reliability</li>
+          <li>React Ecosystem (Next.js)</li>
+          <li>Web Performance Optimization, Core Web Vitals</li>
+          <li>Design Systems, Web Accessibility (WCAG, WAI-ARIA)</li>
+          <li>Relational Data Modeling, Database Optimization (PostgreSQL)</li>
+          <li>NoSQL, Key-Value Stores (Redis, MongoDB)</li>
+          <li>Cloud Platforms (AWS, GCP)</li>
+          <li>Containerization, Orchestration (Docker, Kubernetes)</li>
+          <li>Infrastructure as Code</li>
+          <li>CI/CD, Deployment Strategies (GitOps, Blue/Green, Canary)</li>
+          <li>Serverless, Edge Computing, Caching</li>
+          <li>Observability, Telemetry (OpenTelemetry, Datadog, Sentry)</li>
+          <li>Application Security (OWASP, RBAC, Data Protection)</li>
+          <li>Authentication/Authorization Protocols (OAuth 2.0, OIDC, JWT)</li>
+          <li>LLM Integration, Orchestration (Vercel AI SDK, LangChain, OpenAI API)</li>
+          <li>Retrieval-Augmented Generation (RAG) Architecture</li>
+          <li>Technical Leadership, Architectural Governance</li>
+          <li>Automated Testing Strategy (Unit, Integration, E2E, TDD)</li>
+          <li>Technical Mentorship, Code Review, Engineering Standards</li>
+        </ul>
+      </section>
 
-            <section class="space-y-8">
-                <h2 translate>Profile</h2>
-
-                <div class="space-y-4">
-                    <p translate>
-                        I've been working in software for nearly 20 years and
-                        have built dozens of websites and web applications
-                        end-to-end. I have experience across the entire product
-                        lifecycle, from requirements gathering, design, and
-                        information architecture to infrastructure, database
-                        optimization, incident response, and team building.
-                    </p>
-                    <p translate>
-                        I enjoy taking ownership of both the product and its
-                        team. I like to bridge technology and business, advising
-                        leadership, interpreting feedback, designing user
-                        experiences, and guiding the technical trade-offs
-                        necessary to make the business viable and deliver real
-                        value.
-                    </p>
-                    <p translate>
-                        Ultimately, before I am a professional, I am a user, and
-                        I genuinely value the experience of using reliable
-                        software.
-                    </p>
-                </div>
-            </section>
-
-            <section class="space-y-8">
-                <h2 translate>Publications and Public Speaking</h2>
-
-                <ul class="list-['—'] ps-4 space-y-4 *:ps-2">
-                    <li translate>
-                        <strong
-                            >Introduction to Information Security at Companhia
-                            de Estágios (2025).</strong
-                        >
-                        Co-authored and delivered a company-wide presentation on
-                        information security concepts and best practices for
-                        handling sensitive data safely.
-                    </li>
-                    <li translate>
-                        <strong
-                            >Effective Workplace Communication at Companhia de
-                            Estágios (2024).</strong
-                        >
-                        Delivered a talk during a software engineering team
-                        merger, focusing on effective communication habits for
-                        meetings and conversations.
-                    </li>
-                    <li translate>
-                        <strong
-                            ><a
-                                href="https://www.youtube.com/watch?v=RugYCTCbUO8&list=PLEMcImEccKhTF_iwRUVIhghkFsE8Tmwbz&index=1"
-                                >Building a React app, from scope to deploy</a
-                            >
-                            on Twitch (2022).</strong
-                        >
-                        Hosted a live stream demonstrating the end-to-end
-                        development of a web application, covering requirements
-                        gathering, UI design, data modeling, and deployment.
-                    </li>
-                    <li translate>
-                        <strong
-                            ><a
-                                href="https://dev.to/haggen/lazy-load-embedded-youtube-videos-520g"
-                                >Lazy load embedded YouTube videos</a
-                            >
-                            on DEV Community (2019).</strong
-                        >
-                        Authored a technical article mitigating performance
-                        issues caused by YouTube embeds on a static website.
-                    </li>
-                    <li translate>
-                        <strong
-                            >Introduction to Ruby and Ruby on Rails at UNIVESP
-                            (2015).</strong
-                        >
-                        Delivered an introductory presentation on the Ruby
-                        language and Ruby on Rails framework to a development
-                        team at Universidade Virtual do Estado de São Paulo.
-                    </li>
-                </ul>
-            </section>
-
-            <section class="space-y-8">
-                <h2 translate>Past Experiences</h2>
-
-                <article class="space-y-4">
-                    <h3 translate>
-                        Technical Lead at Companhia de Estágios
-                        <small>(2024–2026, 2.5 years)</small>
-                    </h3>
-                    <p translate>
-                        Led the development of a candidate-job evaluation and
-                        matching system using LLMs. Maintained and evolved our
-                        in-house apprenticeship and internship management
-                        platform, which integrated Candidate Relationship
-                        Management (CRM), Applicant Tracking System (ATS),
-                        Contract Lifecycle Management (CLM), automated billing,
-                        and supporting tools. Conducted technical interviews,
-                        ran 1:1s, and mentored colleagues of all seniority
-                        levels. Collaborated with domain experts to gather
-                        requirements and shape technical solutions. Structured
-                        and organized product and team documentation.
-                        Established internal guidelines and handled information
-                        security and privacy compliance audits. Managed cloud
-                        infrastructure, Linux systems, and related services.
-                    </p>
-                </article>
-                <article class="space-y-4">
-                    <h3 translate>
-                        Technical Lead at Bluy
-                        <small>(2020–2024, 4 years)</small>
-                    </h3>
-                    <p translate>
-                        Led the end-to-end development of an Applicant Tracking
-                        System (ATS) from the ground up. Conducted technical
-                        interviews, ran regular 1:1s, and mentored colleagues of
-                        all seniority levels. Collaborated with the Product
-                        Owner to gather requirements and shape technical
-                        solutions. Organized product and team documentation
-                        while establishing security and privacy compliance
-                        guidelines. Managed cloud infrastructure, Linux systems,
-                        and related services.
-                    </p>
-                </article>
-                <article class="space-y-4">
-                    <h3 translate>
-                        Consultant and Web Developer at Crz
-                        <small>(2008–2020, 12 years)</small>
-                    </h3>
-                    <p translate>
-                        Built a high-capacity support ticket platform with a
-                        custom form builder for a major direct-selling company,
-                        serving over 300,000 independent sales representatives
-                        and acting as the blueprint for international branches.
-                        Developed a digital archive for a transport and
-                        logistics publisher, processing and indexing over 50
-                        years of magazine issues for online browsing. Created a
-                        multilingual tourism portal and custom CMS for a major
-                        Brazilian city, featuring interactive Google Maps
-                        integration, scenic routes, public service information,
-                        and news.
-                    </p>
-                </article>
-                <article class="space-y-4">
-                    <h3 translate>
-                        Web Developer at Visie
-                        <small>(2011, 1 year)</small>
-                    </h3>
-                    <p translate>
-                        Maintained and scaled a digital-to-physical mail
-                        automation system that digitized, tracked, and printed
-                        transactional mail at high volume, processing tens of
-                        millions of items per batch. Helped translate design
-                        specifications into responsive, reliable front-end
-                        interfaces.
-                    </p>
-                </article>
-                <article class="space-y-4">
-                    <h3 translate>
-                        Web Developer at Folha de S.Paulo
-                        <small>(2009–2011, 2 years)</small>
-                    </h3>
-                    <p translate>
-                        Worked on the in-house news portal, implementing
-                        front-end interfaces for interactive news specials,
-                        internal editorial tools, and various marketing sites
-                        for the company and its branches.
-                    </p>
-                </article>
-                <article class="space-y-4">
-                    <h3 translate>
-                        Personal Projects and Non-Profit Work
-                        <small>(2001–present)</small>
-                    </h3>
-                    <p translate>
-                        At age 11, I taught myself PHP and SQL to build a
-                        registration website and bracket generation system for a
-                        video game tournament organized by a local LAN house. As
-                        a teenager, I helped my dad migrate a school management
-                        system from Classic ASP to ASP.NET at the business
-                        school where he worked, and built several institutional
-                        websites for a local non-profit organization (NGO). Ever
-                        since I first learned to program, I have continuously
-                        worked on personal projects, ranging from small
-                        applications to games and libraries. Everything is
-                        open-source and available at
-                        <a href="https://github.com/haggen">my GitHub</a>.
-                    </p>
-                </article>
-            </section>
-
-            <section class="space-y-8">
-                <h2 translate>Expertise</h2>
-
-                <ul
-                    class="*:inline *:not-first:before:content-['·_'] *:before:inline"
-                >
-                    <li>TypeScript</li>
-                    <li>JavaScript</li>
-                    <li>Python</li>
-                    <li>Ruby</li>
-                    <li>Go</li>
-                    <li>Node.js</li>
-                    <li>Architecture, Systems Design</li>
-                    <li>Distributed Systems, Microservices</li>
-                    <li>Event-Driven Architecture (Message Queues, Pub/Sub)</li>
-                    <li>Domain-Driven Design (DDD), Clean Architecture</li>
-                    <li>API Design (REST, GraphQL, RPC)</li>
-                    <li>High Availability, Scalability, Systems Reliability</li>
-                    <li>React ecosystem (Next.js)</li>
-                    <li>Web Performance Optimization, Core Web Vitals</li>
-                    <li>Design Systems, Web Accessibility (WCAG, WAI-ARIA)</li>
-                    <li>
-                        Relational Data Modeling, Database Optimization
-                        (PostgreSQL)
-                    </li>
-                    <li>NoSQL, Key-Value Stores (Redis, MongoDB)</li>
-                    <li>Cloud Platforms (AWS, GCP)</li>
-                    <li>
-                        Containerization, Orchestration (Docker, Kubernetes)
-                    </li>
-                    <li>Infrastructure as Code</li>
-                    <li>
-                        CI/CD, Deployment Strategies (GitOps, Blue/Green,
-                        Canary)
-                    </li>
-                    <li>Serverless, Edge Computing, Caching</li>
-                    <li>
-                        Observability, Telemetry (OpenTelemetry, Datadog,
-                        Sentry)
-                    </li>
-                    <li>Application Security (OWASP, RBAC, Data Protection)</li>
-                    <li>
-                        Authentication/Authorization Protocols (OAuth 2.0, OIDC,
-                        JWT)
-                    </li>
-                    <li>
-                        LLM Integration, Orchestration (LangChain, OpenAI API)
-                    </li>
-                    <li>Retrieval-Augmented Generation (RAG) Architecture</li>
-                    <li>Technical Leadership, Architectural Governance</li>
-                    <li>
-                        Automated Testing Strategy (Unit, Integration, E2E, TDD)
-                    </li>
-                    <li>
-                        Technical Mentorship, Code Review, Engineering Standards
-                    </li>
-                </ul>
-            </section>
-
-            <footer class="text-sm text-balance">
-                <p translate>
-                    Content under CC BY-SA 4.0. Code under MIT,
-                    <a href="https://github.com/haggen/arthur"
-                        >available at GitHub</a
-                    >.
-                </p>
-            </footer>
-        </main>
-    </body>
+      <footer class="text-sm text-balance">
+        <p translate>
+          Content under CC BY-SA 4.0. Code under MIT,
+          <a href="https://github.com/haggen/arthur">available on GitHub</a>.
+        </p>
+      </footer>
+    </main>
+  </body>
 </html>
